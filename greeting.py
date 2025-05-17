@@ -10,4 +10,19 @@ def greet(name):
     else:
         print(f"Good Night, {name}")
 
-greet("John")
+### Using match case give me the above code
+
+def greeting(name):
+    current_hour = int(time.strftime("%H", time.localtime()))
+    match current_hour:
+        case hour if 5 <= hour < 12:
+            print(f"Good Morning, {name}")
+        case hour if 12 <= hour < 17:
+            print(f"Good Afternoon, {name}")
+        case hour if 17 <= hour < 20:
+            print(f"Good Evening, {name}")
+        case _:
+            print(f"Good Night, {name}")
+
+greet("Aditya")
+greeting("John")
